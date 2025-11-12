@@ -1,5 +1,6 @@
 # Fermi Open Events Processing
 
+
 Code to process the CMS Open Data Sample used to make the Fermi Open Events sample.
 
 At a high level, we start with CMS data at the `MINIAOD` tier.
