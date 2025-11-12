@@ -2,19 +2,21 @@ import os
 
 #nJobs = 1309
 #inputList =  "2016H.txt"
-#nJobs = 1236
-#inputList =  "2016G.txt"
+nJobs = 1236
+inputList =  "file_lists/JetHT_2016G.txt"
+label = "JetHT_2016G_job%i"
+
 #nJobs = 500
 #inputList =  "QCD_Pt600.txt"
 #nJobs = 1087
 #inputList =  "file_lists/QCD_Pt300.txt"
 #nJobs = 1067
 #inputList =  "file_lists/QCD_Pt470.txt"
-nJobs = 834
-inputList =  "file_lists/QCD_Pt800.txt"
+#nJobs = 834
+#inputList =  "file_lists/QCD_Pt800.txt"
+#label = "QCDPt800_job%i"
 
 odir = "EOS_files_split/"
-label = "QCDPt800_job%i"
 
 fin = open(inputList)
 

@@ -14,12 +14,19 @@ eos_base = "root://cmseos.fnal.gov/"
 #nJobs = 1236
 #label = "QCDPt300"
 #nJobs = 1087
-label = "QCDPt800"
-nJobs = 834
+#label = "QCDPt800"
+#nJobs = 834
 #label = "Zprime_PSweight"
 #nJobs = 10
-mc = True
+
+label = "JetHT_2016G"
+nJobs = 1
+
+mc = False
 mem = 6000.
+
+#Make sure you run doCondor.py --tar to update the tarball for the jobs before submitting
+#You also need to ensure you have the filenames for each job to run in the correct location (EOS_files_split)
 
 
 
@@ -28,17 +35,17 @@ if(nJobs > 0):
 else:
     oname = label + ".h5"
 
-script_name = "scripts/script_temp.sh"
-print_and_do("cp scripts/h5_template.sh %s" % script_name)
+script_name = "condor_script_templates/script_temp.sh"
+print_and_do("cp condor_script_templates/h5_template.sh %s" % script_name)
 f = open(script_name, "a")
 
 if(not mc):
     cmd_PFNano = "cmsRun pfnano_data_2016UL_OpenData.py inputFiles_load=EOS_files_split/%s_job${2}.txt \n" % (label) 
-    cmd_h5 = "python H5_maker.py -i nano_data2016.root -o %s -j Cert_271036-284044_13TeV_Legacy2016_Collisions16_JSON.txt \n" % oname
+    cmd_h5 = "python H5_maker_FOE.py -i nano_data2016.root -o %s -j Cert_271036-284044_13TeV_Legacy2016_Collisions16_JSON.txt \n" % oname
 else:
     cmd_PFNano = "cmsRun pfnano_mc_2016UL_OpenData.py inputFiles_load=EOS_files_split/%s_job${2}.txt \n" % (label) 
-    #cmd_h5 = "python H5_maker.py -i nano_mc2016post.root -o %s --sample_type MC --gen_match \n" % oname
-    cmd_h5 = "python H5_maker.py -i nano_mc2016post.root -o %s --sample_type MC \n" % oname
+    #cmd_h5 = "python H5_maker_FOE.py -i nano_mc2016post.root -o %s --sample_type MC --gen_match \n" % oname
+    cmd_h5 = "python H5_maker_FOE.py -i nano_mc2016post.root -o %s --sample_type MC \n" % oname
 
 
 f.write(cmd_PFNano)

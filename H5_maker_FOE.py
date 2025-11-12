@@ -120,8 +120,6 @@ class Outputer:
         if(self.idx < self.batch_size):
             print("Last batch only filled %i events, shortening arrays \n" % self.idx)
             self.PFCands = self.PFCands[:self.idx]
-            self.jet_kinematics = self.jet_kinematics[:self.idx] 
-            self.jet_tagging = self.jet_tagging[:self.idx] 
             self.event_info = self.event_info[:self.idx]
 
         self.write_out()

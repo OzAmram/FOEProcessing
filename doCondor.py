@@ -155,7 +155,8 @@ def doCondor(options):
     if options.tar:
         tar_cmd = "tar" 
         excludeList = options.tarexclude.split(',')
-        excludeList = ["CMSSW_10_6_30/src/H5_maker/condor_jobs/*"]
+        #excludeList = ["CMSSW_10_6_30/src/H5_maker/condor_jobs/*"]
+        excludeList = []
 
         print("tarring CMSSW")
         #tar_cmd += " --exclude='%s' " %'*.tgz' 

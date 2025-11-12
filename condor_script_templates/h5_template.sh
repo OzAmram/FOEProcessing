@@ -2,5 +2,5 @@
 
 set -x
 
-cd H5_maker/
+cd FOEProcessing/
 eval `scramv1 runtime -sh`
