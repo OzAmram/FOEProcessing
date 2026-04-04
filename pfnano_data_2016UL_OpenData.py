@@ -33,8 +33,8 @@ options = VarParsing.VarParsing ('analysis')
 options.maxEvents = -1
 options.parseArguments()
 
-print(options)
-print(options.inputFiles)
+#print(options)
+#print(options.inputFiles)
 
 
 process.maxEvents = cms.untracked.PSet(

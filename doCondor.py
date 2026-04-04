@@ -66,9 +66,11 @@ def doCondor(options):
     #if len(args) < 1 and (not options.monitor or not options.tar) : sys.exit('Error -- must specify ANALYZER')
     cmssw_ver = os.getenv('CMSSW_VERSION', 'CMSSW_10_6_30')
     xrd_base = 'root://cmseos.fnal.gov/'
-    EOS_home = '/store/user/oamram/'
+    #EOS_home = '/store/user/pjana/'
+    EOS_home = '/store/group/lpctreasure/'
     EOS_base = xrd_base + EOS_home
-    EOS_base_local = "/eos/uscms/store/user/oamram/"
+    #EOS_base_local = "/eos/uscms/store/user/pjana/"
+    EOS_base_local = "/eos/uscms/store/group/lpctreasure/"
     scram_arch = 'slc7_amd64_gcc700'
     cmssw_name = 'CMSSW_10_6_30'
 

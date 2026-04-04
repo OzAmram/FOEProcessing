@@ -10,19 +10,10 @@ eos_base = "root://cmseos.fnal.gov/"
 
 #label = "2016H"
 #nJobs = 1309
-#label = "2016G"
-#nJobs = 1236
-#label = "QCDPt300"
-#nJobs = 1087
-#label = "QCDPt800"
-#nJobs = 834
-#label = "Zprime_PSweight"
-#nJobs = 10
+label = "CMS_mc_RunIISummer20UL16MiniAODv2_TTToSemiLeptonic"
+nJobs = 3165
 
-label = "JetHT_2016G"
-nJobs = 1
-
-mc = False
+mc = True
 mem = 6000.
 
 #Make sure you run doCondor.py --tar to update the tarball for the jobs before submitting
