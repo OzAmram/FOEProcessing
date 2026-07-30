@@ -59,6 +59,12 @@ cmsenv
 scram b
 ```
 
+Then clone this repo into the `src/` directory
+
+```
+git clone git@github.com:Pranati-Jana/FOEProceessing.git
+```
+
 ## Running 
 
 Production occurs in two steps. First the PFNano tool is run, using a CMS
